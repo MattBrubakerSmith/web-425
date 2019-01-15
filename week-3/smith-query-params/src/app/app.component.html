@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="">Home</a>
+          <a class="nav-link" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/{{ userId }}">Default User</a>
+          <a class="nav-link" [routerLink]="['/user', userId]">Default User</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pancakes">Nonexistent URL</a>
+          <a class="nav-link" [routerLink]="['/pancakes']">Nonexistent URL</a>
         </li>
       </ul>
     </div>

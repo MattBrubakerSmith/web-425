@@ -1,0 +1,8 @@
+.txt-bold {
+    font-weight: bold;
+}
+
+.display-message {
+    background-color: lightgreen;
+    border: 1px solid darkgreen;
+}

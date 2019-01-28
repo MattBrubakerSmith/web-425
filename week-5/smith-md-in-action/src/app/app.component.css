@@ -1,0 +1,11 @@
+.parent {
+    height: 100vh;
+}
+
+.left {
+    background-color: lightblue;
+}
+
+.right {
+    padding: 20px;
+}

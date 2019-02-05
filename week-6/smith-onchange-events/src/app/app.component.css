@@ -1,0 +1,25 @@
+.parent {
+    background-color: darksalmon;
+    box-sizing: border-box !important;
+    padding: 20px 30px !important;
+}
+
+.container {
+    height: calc(100vh - 64px);
+}
+
+.sidenav {
+    width: 20%;
+    background-color: saddlebrown;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-content > * {
+    width: 80%;
+}

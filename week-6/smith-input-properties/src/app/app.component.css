@@ -1,0 +1,15 @@
+.container {
+    height: calc(100vh - 64px);
+}
+
+.sidenav {
+    width: 20%;
+    background-color: lemonchiffon;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

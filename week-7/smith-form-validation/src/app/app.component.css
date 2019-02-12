@@ -1,0 +1,41 @@
+.container {
+    height: calc(100vh - 64px);
+}
+
+.sidenav {
+    width: 20%;
+    background-color: olive;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 90%;
+    margin-top: 30px;
+}
+
+.error {
+    color: indianred;
+}
+
+.hasError {
+    border: 1px solid indianred;
+}
+
+.form-field-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+mat-form-field  {
+    width: 300px;
+}
+
+button {
+    margin-right: 10px !important;
+}

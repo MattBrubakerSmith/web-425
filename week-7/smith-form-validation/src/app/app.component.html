@@ -1,0 +1,78 @@
+<mat-toolbar class="menu" role="header" color="primary">
+    <mat-toolbar-row>
+      <button mat-button class="toolbar__icon-button mat-button">
+        <mat-icon>web</mat-icon>
+        <span style="margin-left: 7px;">WEB 425</span>
+      </button>
+      <button class="mat-button">
+        About
+      </button>
+      <button class="mat-button">
+        Contact Us
+      </button>
+  
+      <div fxFlex></div>
+  
+      <button 
+        class="toolbar__icon-button"
+        [matMenuTriggerFor]="menu"
+        mat-icon-button
+      >
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>perm_contact_calendar</mat-icon>
+          <span>My Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="container">
+    <mat-sidenav mode="side" opened class="sidenav"></mat-sidenav>
+    <mat-sidenav-content class="main-content">
+      
+      <form #f="ngForm" (ngSubmit)="OnSubmit(f.value)" >
+        <mat-card>
+          <mat-card-title>Phone Validator</mat-card-title>
+          <div class="form-field-container">
+            <mat-card-content>
+              <mat-form-field>
+                <mat-label for="phone">Phone Number: </mat-label>
+                <input 
+                  required
+                  pattern="[0-9]*"
+                  minlength="10"
+                  #phone="ngModel"
+                  [class.hasError]="phone.invalid && phone.touched"
+                  matInput 
+                  type="tel" 
+                  name="phone" 
+                  id="phone" 
+                  ngModel 
+                />
+              </mat-form-field>
+              <div [hidden]="phone.valid || phone.pristine">
+                <p class="error" [hidden]="!phone.hasError('minlength')">Phone number must be at least ten digits.</p>
+                <p class="error" [hidden]="!phone.hasError('required')">Phone number is required.</p>
+                <p class="error" [hidden]="!phone.hasError('pattern')">Only digits are allowed.</p>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Submit</button>
+            </mat-card-actions>
+          </div>
+        </mat-card>
+      </form>
+        
+    </mat-sidenav-content>
+  </mat-sidenav-container>

@@ -1,0 +1,72 @@
+<mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button">
+      <mat-icon>web</mat-icon>
+      <span style="margin-left: 7px;">WEB 425</span>
+    </button>
+    <button class="mat-button">
+      About
+    </button>
+    <button class="mat-button">
+      Contact Us
+    </button>
+
+    <div fxFlex></div>
+
+    <button 
+      class="toolbar__icon-button"
+      [matMenuTriggerFor]="menu"
+      mat-icon-button
+    >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>perm_contact_calendar</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened class="sidenav"></mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" >
+      <mat-card>
+        <mat-card-title>Login Form</mat-card-title>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label for="username">Username: </mat-label>
+            <input matInput type="text" name="username" id="username" ngModel />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label for="ssn">SSN: </mat-label>
+            <input matInput type="text" name="ssn" id="ssn" ngModel />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label for="password">Password: </mat-label>
+            <input matInput type="password" name="password" id="password" ngModel />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label for="passwordConfirm">Confirm password: </mat-label>
+            <input matInput type="password" name="passwordConfirm" id="passwordConfirm" ngModel />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+      
+  </mat-sidenav-content>
+</mat-sidenav-container>
